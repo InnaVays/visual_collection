@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import seaborn as sns
 
 def bar_ordered(categories, values, xlabel='Value', ylabel='Category', title='Ordered Bar Chart', bar_kwargs=None):
     if bar_kwargs is None:
@@ -70,6 +71,31 @@ def lollipop_v(categories, values, xlabel='Category', ylabel='Value', title='Ver
     fig, ax = plt.subplots(figsize=(8, 6))
     ax.vlines(categories, 0, values, **lollipop_kwargs)
     ax.scatter(categories, values, color='red', zorder=3)
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel)
+    ax.set_title(title)
+    plt.show()
+
+def symbol_proportional_ordered(categories, values, xlabel='Category', ylabel='Value', title='Proportional Symbol Chart', scatter_kwargs=None):
+
+    if scatter_kwargs is None:
+        scatter_kwargs = {}
+
+    sizes = np.array(values) * 10  # Scale values for visualization
+    fig, ax = plt.subplots(figsize=(8, 6))
+    ax.scatter(categories, values, s=sizes, **scatter_kwargs)
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel)
+    ax.set_title(title)
+    plt.show()
+
+def dot_plot_strip(categories, values, xlabel='Category', ylabel='Value', title='Dot Strip Plot', strip_kwargs=None):
+
+    if strip_kwargs is None:
+        strip_kwargs = {}
+
+    fig, ax = plt.subplots(figsize=(8, 6))
+    sns.stripplot(x=categories, y=values, ax=ax, **strip_kwargs)
     ax.set_xlabel(xlabel)
     ax.set_ylabel(ylabel)
     ax.set_title(title)
