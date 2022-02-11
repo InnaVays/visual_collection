@@ -66,3 +66,35 @@ def heat_map(data, title='Heat Map', cmap='Reds', bins=50, heatmap_kwargs=None):
     ax.set_title(title)
     plt.show()
 
+def equalised_cartogram(geo_data, title='Equalised Cartogram', cartogram_kwargs=None):
+
+    if cartogram_kwargs is None:
+        cartogram_kwargs = {}
+    
+    fig, ax = plt.subplots(figsize=(10, 6))
+    geo_data.plot(ax=ax, **cartogram_kwargs)
+    ax.set_title(title)
+    plt.show()
+
+
+def scaled_cartogram(geo_data, column, title='Scaled Cartogram', cartogram_kwargs=None):
+
+    if cartogram_kwargs is None:
+        cartogram_kwargs = {}
+    
+    geo_data['scaled_area'] = np.sqrt(geo_data[column])  # Scale by square root for better proportions
+    fig, ax = plt.subplots(figsize=(10, 6))
+    geo_data.plot(ax=ax, **cartogram_kwargs)
+    ax.set_title(title)
+    plt.show()
+
+
+def dot_density(data, title='Dot Density Map', dot_kwargs=None):
+
+    if dot_kwargs is None:
+        dot_kwargs = {}
+    
+    fig, ax = plt.subplots(figsize=(10, 6))
+    ax.scatter(data['longitude'], data['latitude'], alpha=0.5, **dot_kwargs)
+    ax.set_title(title)
+    plt.show()
