@@ -4,6 +4,19 @@ import seaborn as sns
 import pandas as pd
 
 def line_chart(x, y, xlabel='Time', ylabel='Value', title='Line Chart', line_kwargs=None):
+    """
+    Creates a standard line chart to show changes over time.
+    
+    Best used for: Time series trends (e.g., stock prices, economic indicators).
+    
+    Parameters:
+    - x: List or array of time values.
+    - y: List or array of corresponding values.
+    - xlabel: Label for the x-axis.
+    - ylabel: Label for the y-axis.
+    - title: Title of the chart.
+    - line_kwargs: Dict for line customization (e.g., linestyle, color, marker).
+    """
 
     if line_kwargs is None:
         line_kwargs = {}
@@ -142,7 +155,7 @@ def circles_timeline(x, y, sizes, xlabel='Time', ylabel='Categories', title='Cir
     plt.show()
 
 def seismogram(x, y, xlabel='Time', ylabel='Magnitude', title='Seismogram', line_kwargs=None):
-    
+
     if line_kwargs is None:
         line_kwargs = {}
 
