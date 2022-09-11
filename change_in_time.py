@@ -8,14 +8,6 @@ def line_chart(x, y, xlabel='Time', ylabel='Value', title='Line Chart', line_kwa
     Creates a standard line chart to show changes over time.
     
     Best used for: Time series trends (e.g., stock prices, economic indicators).
-    
-    Parameters:
-    - x: List or array of time values.
-    - y: List or array of corresponding values.
-    - xlabel: Label for the x-axis.
-    - ylabel: Label for the y-axis.
-    - title: Title of the chart.
-    - line_kwargs: Dict for line customization (e.g., linestyle, color, marker).
     """
 
     if line_kwargs is None:
