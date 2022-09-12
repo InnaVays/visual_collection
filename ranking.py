@@ -4,6 +4,11 @@ import pandas as pd
 import seaborn as sns
 
 def bar_ordered(categories, values, xlabel='Value', ylabel='Category', title='Ordered Bar Chart', bar_kwargs=None):
+    """
+    Creates an ordered bar chart to emphasize ranking.
+    
+    Best used for: Comparing ranked values, league tables, constituency election results.
+    """
     if bar_kwargs is None:
         bar_kwargs = {}
     
@@ -19,6 +24,11 @@ def bar_ordered(categories, values, xlabel='Value', ylabel='Category', title='Or
     plt.show()
 
 def column_ordered(categories, values, xlabel='Category', ylabel='Value', title='Ordered Column Chart', bar_kwargs=None):
+    """
+    Creates an ordered column chart to emphasize ranking.
+    
+    Best used for: Highlighting rankings when absolute values matter less.
+    """
     if bar_kwargs is None:
         bar_kwargs = {}
     
@@ -34,6 +44,11 @@ def column_ordered(categories, values, xlabel='Category', ylabel='Value', title=
     plt.show()
 
 def slope_chart(categories, values1, values2, xlabel='Category', ylabel='Value', title='Slope Chart', line_kwargs=None):
+    """
+    Creates a slope chart to show ranking changes between two time points.
+    
+    Best used for: Showing how rankings have changed over time or between categories.
+    """
     if line_kwargs is None:
         line_kwargs = {}
     
@@ -49,6 +64,11 @@ def slope_chart(categories, values1, values2, xlabel='Category', ylabel='Value',
     plt.show()
 
 def lollipop_h(categories, values, xlabel='Value', ylabel='Category', title='Horizontal Lollipop Chart', lollipop_kwargs=None):
+    """
+    Creates a horizontal lollipop chart for ranking visualization.
+    
+    Best used for: Emphasizing specific values in a ranked dataset while maintaining order.
+    """
     if lollipop_kwargs is None:
         lollipop_kwargs = {}
     
@@ -65,6 +85,11 @@ def lollipop_h(categories, values, xlabel='Value', ylabel='Category', title='Hor
     plt.show()
 
 def lollipop_v(categories, values, xlabel='Category', ylabel='Value', title='Vertical Lollipop Chart', lollipop_kwargs=None):
+    """
+    Creates a vertical lollipop chart for ranking visualization.
+    
+    Best used for: Highlighting specific values while maintaining an ordered ranking.
+    """
     if lollipop_kwargs is None:
         lollipop_kwargs = {}
     
