@@ -5,9 +5,12 @@ import numpy as np
 from matplotlib.sankey import Sankey
 import seaborn as sns
 
-
 def sankey_chart(flows, labels, title='Sankey Diagram'):
-
+    """
+    Creates a Sankey diagram to show flow between multiple conditions.
+    
+    Best used for: Visualizing transitions between states, such as financial flows or process changes.
+    """
     fig, ax = plt.subplots(figsize=(8, 6))
     sankey = Sankey(ax=ax, unit=None)
     for flow, label in zip(flows, labels):
@@ -16,9 +19,12 @@ def sankey_chart(flows, labels, title='Sankey Diagram'):
     ax.set_title(title)
     plt.show()
 
-
 def waterfall_chart(categories, values, xlabel='Category', ylabel='Value', title='Waterfall Chart', bar_kwargs=None):
-
+    """
+    Creates a waterfall chart to show sequential changes in data, including positive and negative components.
+    
+    Best used for: Budget analysis, revenue breakdowns.
+    """
     if bar_kwargs is None:
         bar_kwargs = {}
     
@@ -31,9 +37,12 @@ def waterfall_chart(categories, values, xlabel='Category', ylabel='Value', title
     ax.set_title(title)
     plt.show()
 
-
 def chord_diagram(matrix, labels, title='Chord Diagram'):
-
+    """
+    Creates a chord diagram to visualize 2-way flows between multiple categories.
+    
+    Best used for: Displaying relationships in a matrix, such as trade flows or connectivity.
+    """
     fig, ax = plt.subplots(figsize=(8, 8))
     G = nx.DiGraph()
     for i, label in enumerate(labels):
@@ -50,7 +59,11 @@ def chord_diagram(matrix, labels, title='Chord Diagram'):
 
 
 def network_graph(edges, title='Network Graph'):
-
+    """
+    Creates a network graph to show interconnected relationships.
+    
+    Best used for: Visualizing relationships, such as trade partners, citations, or social networks.
+    """
     fig, ax = plt.subplots(figsize=(8, 8))
     G = nx.Graph()
     G.add_edges_from(edges)
