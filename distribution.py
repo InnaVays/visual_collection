@@ -4,7 +4,11 @@ import seaborn as sns
 import pandas as pd
 
 def histogram(data, bins=10, xlabel='Value', ylabel='Frequency', title='Histogram', hist_kwargs=None):
-
+    """
+    Creates a histogram to show the distribution of a dataset.
+    
+    Best used for: Understanding the shape and spread of data (e.g., income distribution, population distribution).
+    """
     if hist_kwargs is None:
         hist_kwargs = {}
     
@@ -16,7 +20,9 @@ def histogram(data, bins=10, xlabel='Value', ylabel='Frequency', title='Histogra
     plt.show()
 
 def boxplot(data, labels=None, xlabel='Category', ylabel='Value', title='Boxplot', box_kwargs=None):
-
+    """
+    Creates a boxplot to summarize distributions using median, quartiles, and range.
+    """
     if box_kwargs is None:
         box_kwargs = {}
     
@@ -27,8 +33,10 @@ def boxplot(data, labels=None, xlabel='Category', ylabel='Value', title='Boxplot
     ax.set_title(title)
     plt.show()
 
-def violin(data, labels=None, xlabel='Category', ylabel='Value', title='Violin Plot', violin_kwargs=None):
-
+def violin_plot(data, labels=None, xlabel='Category', ylabel='Value', title='Violin Plot', violin_kwargs=None):
+    """
+    Creates a violin plot, useful for displaying distributions with more detail than a boxplot.
+    """
     if violin_kwargs is None:
         violin_kwargs = {}
     
@@ -90,7 +98,11 @@ def barcode_plot(data, xlabel='Value', ylabel='Frequency', title='Barcode Plot',
     plt.show()
 
 def cumulative_curve(data, xlabel='Value', ylabel='Cumulative Frequency', title='Cumulative Curve', curve_kwargs=None):
-
+    """
+    Creates a cumulative frequency curve.
+    
+    Best used for: Showing inequality in distributions (e.g., wealth distribution).
+    """
     if curve_kwargs is None:
         curve_kwargs = {}
     
