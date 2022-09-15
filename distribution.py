@@ -49,6 +49,11 @@ def violin_plot(data, labels=None, xlabel='Category', ylabel='Value', title='Vio
     plt.show()
 
 def population_pyramid(male_values, female_values, age_groups, xlabel='Population', ylabel='Age Group', title='Population Pyramid', bar_kwargs=None):
+    """
+    Creates a histogram to show the distribution of a dataset.
+    
+    Best used for: Understanding the shape and spread of data (e.g., income distribution, population distribution).
+    """
     if bar_kwargs is None:
         bar_kwargs = {}
     
@@ -74,7 +79,11 @@ def dot_plot_strip(data, xlabel='Value', ylabel='Category', title='Dot Strip Plo
     plt.show()
 
 def dot_plot(categories, values, xlabel='Category', ylabel='Value', title='Dot Plot', dot_kwargs=None):
+    """
+    Creates a dot plot to show the range (min/max) of data across multiple categories.
 
+    Best used for: Comparing individual values across different groups while maintaining readability.
+    """
     if dot_kwargs is None:
         dot_kwargs = {}
     
@@ -86,7 +95,11 @@ def dot_plot(categories, values, xlabel='Category', ylabel='Value', title='Dot P
     plt.show()
 
 def barcode_plot(data, xlabel='Value', ylabel='Frequency', title='Barcode Plot', barcode_kwargs=None):
+    """
+    Creates a barcode plot to visualize the distribution of individual data points.
 
+    Best used for: Highlighting the frequency and clustering of values in a dataset.
+    """
     if barcode_kwargs is None:
         barcode_kwargs = {}
     
