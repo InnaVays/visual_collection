@@ -8,7 +8,11 @@ from scipy.spatial import Voronoi, voronoi_plot_2d
 import plotly.express as px
 
 def column_stacked(data, categories, labels, xlabel='Category', ylabel='Value', title='Stacked Column Chart', bar_kwargs=None):
+    """
+    Creates a stacked column chart to show part-to-whole relationships.
 
+    Best used for: Comparing multiple components within a category while maintaining total size.
+    """
     if bar_kwargs is None:
         bar_kwargs = {}
     
@@ -21,7 +25,11 @@ def column_stacked(data, categories, labels, xlabel='Category', ylabel='Value', 
     plt.show()
 
 def pie_chart(values, labels, title='Pie Chart', pie_kwargs=None):
+    """
+    Creates a pie chart to visualize proportions within a whole.
 
+    Best used for: Displaying simple part-to-whole relationships but may be hard to compare segment sizes.
+    """
     if pie_kwargs is None:
         pie_kwargs = {}
     
@@ -32,7 +40,11 @@ def pie_chart(values, labels, title='Pie Chart', pie_kwargs=None):
 
 
 def doughnut_chart(values, labels, title='Doughnut Chart', pie_kwargs=None):
+    """
+    Creates a doughnut chart, similar to a pie chart but with a central hole.
 
+    Best used for: Adding additional information in the center while still showing proportions.
+    """
     if pie_kwargs is None:
         pie_kwargs = {}
     
@@ -44,7 +56,11 @@ def doughnut_chart(values, labels, title='Doughnut Chart', pie_kwargs=None):
 
 
 def treemap(values, labels, title='Treemap', treemap_kwargs=None):
+    """
+    Creates a treemap for hierarchical part-to-whole visualization.
 
+    Best used for: Representing nested relationships with relative sizes but can be hard to interpret with many small segments.
+    """
     if treemap_kwargs is None:
         treemap_kwargs = {}
     
@@ -56,7 +72,11 @@ def treemap(values, labels, title='Treemap', treemap_kwargs=None):
 
 
 def venn_diagram(sets, labels, title='Venn Diagram'):
+    """
+    Creates a Venn diagram to show overlaps between sets.
 
+    Best used for: Illustrating relationships between two or three sets.
+    """
     fig, ax = plt.subplots(figsize=(8, 6))
     if len(sets) == 2:
         venn2(sets, set_labels=labels, ax=ax)
@@ -70,7 +90,11 @@ def venn_diagram(sets, labels, title='Venn Diagram'):
 
 
 def waterfall_chart(categories, values, xlabel='Category', ylabel='Value', title='Waterfall Chart', bar_kwargs=None):
+    """
+    Creates a waterfall chart to display sequential changes in values, including positive and negative components.
 
+    Best used for: Financial and budget analysis to show cumulative changes.
+    """
     if bar_kwargs is None:
         bar_kwargs = {}
     
@@ -84,7 +108,11 @@ def waterfall_chart(categories, values, xlabel='Category', ylabel='Value', title
     plt.show()
 
 def voronoi_diagram(points, title="Voronoi Diagram", voronoi_kwargs=None):
+    """
+    Creates a Voronoi diagram to partition space based on proximity to given points.
 
+    Best used for: Spatial analysis and nearest-neighbor relationships.
+    """
     if voronoi_kwargs is None:
         voronoi_kwargs = {}
 
@@ -100,18 +128,16 @@ def sunburst_chart(data, path, values, title="Sunburst Chart"):
     Creates a sunburst chart for hierarchical part-to-whole relationships.
 
     Best used for: Hierarchical structures, organizational breakdowns.
-
-    Parameters:
-    - data: DataFrame containing hierarchical data.
-    - path: List of column names defining hierarchy.
-    - values: Column name containing numerical values.
-    - title: Title of the chart.
     """
     fig = px.sunburst(data, path=path, values=values, title=title)
     fig.show()
 
 def arc_chart(categories, values, title="Arc Chart", arc_kwargs=None):
+    """
+    Creates an arc chart (hemicycle) to visualize political or proportional results.
 
+    Best used for: Displaying grouped proportional data in a half-circle format.
+    """
     if arc_kwargs is None:
         arc_kwargs = {}
 
@@ -124,7 +150,11 @@ def arc_chart(categories, values, title="Arc Chart", arc_kwargs=None):
     plt.show()
 
 def gridplot(data, rows, cols, title="Gridplot", grid_kwargs=None):
+    """
+    Creates a gridplot for representing percentage-based information using whole numbers.
 
+    Best used for: Visualizing proportions across multiple categories in a structured layout.
+    """
     if grid_kwargs is None:
         grid_kwargs = {}
 
