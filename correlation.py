@@ -4,7 +4,11 @@ import seaborn as sns
 import pandas as pd
 
 def scatterplot(x, y, xlabel="X-axis", ylabel="Y-axis", title="Scatterplot", figsize=(8, 6), scatter_kwargs=None):
-
+    """
+    Creates a standard scatterplot to show relationships between two variables.
+    
+    Best used for: Correlation analysis between two numerical variables (e.g., income & life expectancy).
+    """
     if scatter_kwargs is None:
         scatter_kwargs = {}
     
@@ -17,7 +21,11 @@ def scatterplot(x, y, xlabel="X-axis", ylabel="Y-axis", title="Scatterplot", fig
 
 
 def line_column(x, y_line, y_column, xlabel="X-axis", ylabel_line="Line Value", ylabel_column="Column Value", title="Line-Column Chart", figsize=(8, 6), line_kwargs=None, bar_kwargs=None):
-
+    """
+    Creates a combined line-column chart, showing relationships between an amount (column) and a rate (line).
+    
+    Best used for: Visualizing trends where a quantity and a rate interact (e.g., inflation vs. unemployment).
+    """
     if line_kwargs is None:
         line_kwargs = {}
     if bar_kwargs is None:
@@ -36,7 +44,11 @@ def line_column(x, y_line, y_column, xlabel="X-axis", ylabel_line="Line Value", 
 
 
 def scatterplot_connected(x, y, xlabel="X-axis", ylabel="Y-axis", title="Connected Scatterplot", figsize=(8, 6), scatter_kwargs=None, line_kwargs=None):
-
+    """
+    Creates a connected scatterplot to show how relationships between two variables evolve over time.
+    
+    Best used for: Time-series analysis where correlation changes over time.
+    """
     if scatter_kwargs is None:
         scatter_kwargs = {}
     if line_kwargs is None:
@@ -51,7 +63,11 @@ def scatterplot_connected(x, y, xlabel="X-axis", ylabel="Y-axis", title="Connect
     plt.show()
 
 def bubble_chart(x, y, size, xlabel="X-axis", ylabel="Y-axis", title="Bubble Chart", figsize=(8, 6), scatter_kwargs=None):
-
+    """
+    Creates a bubble chart, similar to a scatterplot but with a third variable represented by bubble size.
+    
+    Best used for: Multivariate analysis where size represents importance (e.g., GDP, population, revenue).
+    """
     if scatter_kwargs is None:
         scatter_kwargs = {}
     
@@ -64,7 +80,11 @@ def bubble_chart(x, y, size, xlabel="X-axis", ylabel="Y-axis", title="Bubble Cha
 
 
 def xy_heatmap(data, x_labels, y_labels, title="XY Heatmap", figsize=(8, 6), heatmap_kwargs=None):
-
+    """
+    Creates an XY heatmap to visualize patterns between two categorical variables.
+    
+    Best used for: Showing interactions between two categorical datasets (e.g., industry vs. employment rate).
+    """
     if heatmap_kwargs is None:
         heatmap_kwargs = {}
     
