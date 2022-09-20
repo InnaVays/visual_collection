@@ -6,7 +6,11 @@ import seaborn as sns
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 def basic_choropleth(geo_data, data, column, cmap='Blues', title='Choropleth Map', map_kwargs=None):
-
+    """
+    Creates a choropleth map to represent spatial data using a color scale.
+    
+    Best used for: Representing rates rather than totals, with sensible base geography.
+    """
     if map_kwargs is None:
         map_kwargs = {}
     
@@ -17,7 +21,11 @@ def basic_choropleth(geo_data, data, column, cmap='Blues', title='Choropleth Map
 
 
 def proportional_symbol_map(geo_data, data, column, size_factor=100, title='Proportional Symbol Map', map_kwargs=None):
-
+    """
+    Creates a proportional symbol map where symbol size represents total values.
+    
+    Best used for: Displaying total values rather than rates.
+    """
     if map_kwargs is None:
         map_kwargs = {}
     
@@ -29,7 +37,11 @@ def proportional_symbol_map(geo_data, data, column, size_factor=100, title='Prop
 
 
 def flow_map(geo_data, flows, title='Flow Map', map_kwargs=None):
-
+    """
+    Creates a flow map showing movement between locations.
+    
+    Best used for: Visualizing migration, trade, or movement between regions.
+    """
     if map_kwargs is None:
         map_kwargs = {}
     
@@ -43,7 +55,11 @@ def flow_map(geo_data, flows, title='Flow Map', map_kwargs=None):
 
 
 def contour_map(geo_data, data, column, cmap='coolwarm', title='Contour Map', map_kwargs=None):
-
+    """
+    Creates a contour map to represent areas of equal value.
+    
+    Best used for: Visualizing temperature, elevation, or other continuous spatial values.
+    """
     if map_kwargs is None:
         map_kwargs = {}
     
@@ -56,7 +72,11 @@ def contour_map(geo_data, data, column, cmap='coolwarm', title='Contour Map', ma
 
 
 def heat_map(data, title='Heat Map', cmap='Reds', bins=50, heatmap_kwargs=None):
-
+    """
+    Creates a heat map to visualize density patterns.
+    
+    Best used for: Highlighting areas of high and low concentration.
+    """
     if heatmap_kwargs is None:
         heatmap_kwargs = {}
     
@@ -67,7 +87,11 @@ def heat_map(data, title='Heat Map', cmap='Reds', bins=50, heatmap_kwargs=None):
     plt.show()
 
 def equalised_cartogram(geo_data, title='Equalised Cartogram', cartogram_kwargs=None):
-
+    """
+    Creates an equalised cartogram where map units are converted to equally-sized shapes.
+    
+    Best used for: Representing voting regions with equal share.
+    """
     if cartogram_kwargs is None:
         cartogram_kwargs = {}
     
@@ -78,7 +102,11 @@ def equalised_cartogram(geo_data, title='Equalised Cartogram', cartogram_kwargs=
 
 
 def scaled_cartogram(geo_data, column, title='Scaled Cartogram', cartogram_kwargs=None):
-
+    """
+    Creates a scaled cartogram by resizing regions according to a specific value.
+    
+    Best used for: Showing how areas change based on data values.
+    """
     if cartogram_kwargs is None:
         cartogram_kwargs = {}
     
@@ -90,7 +118,11 @@ def scaled_cartogram(geo_data, column, title='Scaled Cartogram', cartogram_kwarg
 
 
 def dot_density(data, title='Dot Density Map', dot_kwargs=None):
-
+    """
+    Creates a dot density map to show the location of individual events.
+    
+    Best used for: Displaying high-density event locations with annotations.
+    """
     if dot_kwargs is None:
         dot_kwargs = {}
     
