@@ -4,7 +4,11 @@ import seaborn as sns
 import pandas as pd
 
 def bar_diverging(data, labels, colors=('red', 'green'), figsize=(10, 6), bar_kwargs=None, vline_kwargs=None):
-
+    """
+    Creates a diverging bar chart with separate customization options for bars and vertical reference line.
+    
+    Best used for: Trade surplus/deficit, climate change, financial gains/losses.
+    """
     if bar_kwargs is None:
         bar_kwargs = {}
     if vline_kwargs is None:
@@ -18,7 +22,11 @@ def bar_diverging(data, labels, colors=('red', 'green'), figsize=(10, 6), bar_kw
     plt.show()
 
 def bar_diverging_stacked(data, categories, labels, xlabel='Percentage', title='Diverging Stacked Bar Chart', bar_kwargs=None):
-
+    """
+    Creates a diverging stacked bar chart for sentiment-based survey results.
+    
+    Best used for: Presenting sentiment (Agree/Neutral/Disagree), opinion polls.
+    """
     if bar_kwargs is None:
         bar_kwargs = {}
     
@@ -31,7 +39,11 @@ def bar_diverging_stacked(data, categories, labels, xlabel='Percentage', title='
 
 
 def spine_chart(categories, values1, values2, xlabel='Percentage', ylabel='Category', title='Spine Chart', bar_kwargs=None):
-
+    """
+    Creates a spine chart to compare two contrasting components (e.g., Male/Female).
+    
+    Best used for: Gender distribution, urban/rural population splits.
+    """
     if bar_kwargs is None:
         bar_kwargs = {}
     
@@ -50,7 +62,11 @@ def spine_chart(categories, values1, values2, xlabel='Percentage', ylabel='Categ
 
 
 def line_surplus_deficit_filled(x, y1, y2, xlabel='Time', ylabel='Value', title='Surplus/Deficit Filled Line Chart', fill_kwargs=None, line_kwargs=None):
-
+    """
+    Creates a line chart with shaded areas to visualize surplus/deficit balance.
+    
+    Best used for: Budget balance, stock price fluctuations, economic indicators.
+    """
     if line_kwargs is None:
         line_kwargs = {}
     if fill_kwargs is None:
