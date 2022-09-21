@@ -2,11 +2,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 import pandas as pd
-from pandas.plotting import parallel_coordinates
-
 
 def column_chart(categories, values, xlabel='Category', ylabel='Value', title='Column Chart', bar_kwargs=None):
-
+    """
+    Creates a standard column chart to compare the size of things.
+    
+    Best used for: Comparing absolute values, ensuring the y-axis starts at zero.
+    """
     if bar_kwargs is None:
         bar_kwargs = {}
     
@@ -19,7 +21,9 @@ def column_chart(categories, values, xlabel='Category', ylabel='Value', title='C
 
 
 def bar_chart(categories, values, xlabel='Value', ylabel='Category', title='Bar Chart', bar_kwargs=None):
-
+    """
+    Creates a horizontal bar chart, useful for long category names.
+    """
     if bar_kwargs is None:
         bar_kwargs = {}
     
@@ -32,7 +36,11 @@ def bar_chart(categories, values, xlabel='Value', ylabel='Category', title='Bar 
 
 
 def column_grouped(data, categories, labels, xlabel='Category', ylabel='Value', title='Grouped Column Chart', bar_kwargs=None):
-
+    """
+    Creates a grouped column chart for multiple series comparison.
+    
+    Best used for: Comparing multiple categories side-by-side.
+    """
     if bar_kwargs is None:
         bar_kwargs = {}
     
@@ -157,14 +165,22 @@ def bullet_chart(value, target, xlabel='Value', title='Bullet Chart', bar_kwargs
     ax.set_title(title)
     plt.show()
 
-def parallel_coordinates_chart(df, class_column, title='Parallel Coordinates Chart', line_kwargs=None):
+def priestley_timeline(events, durations, xlabel='Time', ylabel='Events', title='Priestley Timeline', bar_kwargs=None):
+    """
+    Creates a Priestley timeline for date and duration visualization.
 
-    if line_kwargs is None:
-        line_kwargs = {}
+    Best used for: Highlighting date and duration relationships.
+    """
+    if bar_kwargs is None:
+        bar_kwargs = {}
 
     fig, ax = plt.subplots(figsize=(10, 6))
-    parallel_coordinates(df, class_column, ax=ax, **line_kwargs)
+    for i, (start, end) in enumerate(durations):
+        ax.barh(i, end - start, left=start, **bar_kwargs)
+    
+    ax.set_yticks(range(len(events)))
+    ax.set_yticklabels(events)
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel)
     ax.set_title(title)
     plt.show()
-
-
