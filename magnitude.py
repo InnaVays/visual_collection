@@ -60,7 +60,11 @@ def column_grouped(data, categories, labels, xlabel='Category', ylabel='Value', 
 
 
 def bar_grouped(data, categories, labels, xlabel='Value', ylabel='Category', title='Grouped Bar Chart', bar_kwargs=None):
+    """
+    Creates a grouped bar chart for comparing multiple series within categories.
 
+    Best used for: Side-by-side comparisons of multiple groups while maintaining categorical separation.
+    """
     if bar_kwargs is None:
         bar_kwargs = {}
     
@@ -80,7 +84,11 @@ def bar_grouped(data, categories, labels, xlabel='Value', ylabel='Category', tit
 
 
 def symbol_proportional(categories, values, xlabel='Category', ylabel='Value', title='Proportional Symbol Chart', scatter_kwargs=None):
+    """
+    Creates a proportional symbol chart where symbol size represents value magnitude.
 
+    Best used for: Highlighting large variations where precise differences are not critical.
+    """
     if scatter_kwargs is None:
         scatter_kwargs = {}
     
@@ -94,7 +102,11 @@ def symbol_proportional(categories, values, xlabel='Category', ylabel='Value', t
 
 
 def lollipop_chart(categories, values, xlabel='Category', ylabel='Value', title='Lollipop Chart', lollipop_kwargs=None):
+    """
+    Creates a lollipop chart to emphasize data points with vertical lines and markers.
 
+    Best used for: Drawing attention to individual values while maintaining a clean design.
+    """
     if lollipop_kwargs is None:
         lollipop_kwargs = {}
     
@@ -108,7 +120,11 @@ def lollipop_chart(categories, values, xlabel='Category', ylabel='Value', title=
 
 
 def radar_chart(data, categories, title='Radar Chart', radar_kwargs=None):
+    """
+    Creates a radar chart to display multiple variables in a circular layout.
 
+    Best used for: Comparing multiple attributes of different entities in a space-efficient way.
+    """
     if radar_kwargs is None:
         radar_kwargs = {}
     
@@ -125,7 +141,11 @@ def radar_chart(data, categories, title='Radar Chart', radar_kwargs=None):
     plt.show()
 
 def bar_stacked_proportional(data, categories, labels, xlabel='Percentage', ylabel='Category', title='Stacked Proportional Bar Chart', bar_kwargs=None):
+    """
+    Creates a stacked proportional bar chart where values are normalized to percentages.
 
+    Best used for: Comparing proportions within categories while maintaining total sum consistency.
+    """
     if bar_kwargs is None:
         bar_kwargs = {}
 
@@ -141,7 +161,11 @@ def bar_stacked_proportional(data, categories, labels, xlabel='Percentage', ylab
     plt.show()
 
 def isotope_pictogram(values, labels, symbol='🔵', title='Isotope (Pictogram) Chart'):
+    """
+    Creates an isotope (pictogram) chart using icons to represent whole-number counts.
 
+    Best used for: Intuitive representation of quantities using symbols; only applicable to discrete values.
+    """
     if any(v % 1 != 0 for v in values):
         raise ValueError("Isotope pictograms should only use whole numbers.")
 
@@ -151,7 +175,11 @@ def isotope_pictogram(values, labels, symbol='🔵', title='Isotope (Pictogram) 
     print(f"\n{title}")
 
 def bullet_chart(value, target, xlabel='Value', title='Bullet Chart', bar_kwargs=None, target_kwargs=None):
+    """
+    Creates a bullet chart to compare performance values against a target.
 
+    Best used for: Performance tracking, goal comparisons, and KPI visualization.
+    """
     if bar_kwargs is None:
         bar_kwargs = {}
     if target_kwargs is None:
