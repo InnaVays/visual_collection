@@ -1,4 +1,4 @@
-# Visual Collection - a vocabulary of the most popular visualization format for beautiful visual storitaling
+# Visual Collection - a vocabulary of the most popular visualization format for beautiful visual storytelling
 
 ## Overview
 
