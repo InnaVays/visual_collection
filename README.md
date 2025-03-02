@@ -90,3 +90,9 @@ Illustrates movement or transitions between states.
 - **waterfall**
 - **chord**
 - **network**
+
+### Related sources:
+
+https://artscience.ai/rule-iii-for-effective-dataviz-refined-execution/
+https://informationisbeautiful.net/visualizations/what-makes-a-good-data-visualization/
+https://junkcharts.typepad.com/junk_charts/junk-charts-trifecta-checkup-the-definitive-guide.html
