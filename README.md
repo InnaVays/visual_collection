@@ -1,13 +1,10 @@
-# Visual Vocabulary - Comprehensive Data Visualization Library
+# Visual Collection - a vocabulary of the most popular visualization format for beautiful visual storitaling
 
 ## Overview
-**Visual Vocabulary** is a Python-based library that provides a structured and categorized approach to data visualization. It includes multiple visualization types, each tailored for different data relationships, ensuring that you can select the best visualization for your dataset and storytelling needs.
-
-This project is designed to:
-- **Standardize visualization approaches** by grouping them into meaningful categories.
+### Project Goals
 - **Provide easy-to-use functions** for each visualization type in Python.
 - **Enable flexibility** by allowing customization with keyword arguments (`kwargs`).
-- **Offer documentation and guidance** on when and how to use each chart type.
+- **Offer documentation, guidance and use scenario** on when and how to use each chart type.
 
 ## Categories & Visualization Types
 ### 1. **Deviation**
