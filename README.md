@@ -1,6 +1,9 @@
 # Visual Collection - a vocabulary of the most popular visualization format for beautiful visual storitaling
 
 ## Overview
+
+The project inspired by https://ft-interactive.github.io/visual-vocabulary/
+
 ### Project Goals
 - **Provide easy-to-use functions** for each visualization type in Python.
 - **Enable flexibility** by allowing customization with keyword arguments (`kwargs`).
